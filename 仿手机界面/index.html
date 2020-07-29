@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<title>仿手机界面</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/background.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="js/vue.js"></script>
+</head>
+<body class="position">
+
+<!--手机主菜单-->
+<div class="content">
+	<!--手机状态栏-->
+	<div class="header" onclick="contentMenu()" id="header1">
+		<!--运营商名称-->
+		<div class="name">
+			<small class="name1 position">中国移动<span>HD</span></small>
+			<small class="name1 position">中国电信<span>HD</span></small>
+		</div>
+		<!--信号状态-->
+		<div class="signal">
+			<small class="signal1 position"><i class="fa fa-signal"></i></small>
+			<small class="signal1 position"><i class="fa fa-signal"></i></small>
+		</div>
+		<!--QQ状态图标-->
+		<div class="qq position">
+			<i class="fa fa-qq"></i>
+		</div>
+		<!--微信图标-->
+		<div class="weixin position">
+			<i class="fa fa-weixin"></i>
+		</div>
+		<!--手机状态栏时间-->
+		<div id="time" class="position">
+
+		</div>
+		<!--手机电池显示-->
+		<div class="battery position">
+			<i class="fa fa-battery-3"></i>
+		</div>
+		<!--手机剩余电量显示-->
+		<div class="dumpEnergy position">
+
+		</div>
+		<!--蓝牙状态-->
+		<div class="blueTooth position">
+			<i class="fa fa-bluetooth-b"></i>
+		</div>
+		<!--wifi状态-->
+		<div class="wifi position">
+			<i class="fa fa-wifi"></i>
+		</div>
+		<!--定位信息状态-->
+		<div class="marker position">
+			<i class="fa fa-map-marker"></i>
+		</div>
+	</div>
+
+
+	<!--手机时间显示-->
+	<div class="content-time">
+		<!--地点及时间、天气信息-->
+		<div class="local">北京市
+			<span class="local-icon">
+				<i class="fa fa-home"></i>
+			</span>
+		</div>
+		<!--时间-->
+		<div class="localTime" id="localTime">
+
+		</div>
+		<!--日期-->
+		<div class="localDate" id="localDate">
+
+		</div>
+		<!--天气-->
+		<div class="localWeather">
+			<span class="wea-icon">
+				<i class="fa fa-sun-o"></i>
+				<i class="fa fa-moon-o"></i>
+			</span>
+			<span class="temperature">
+				31℃
+			</span>
+		</div>
+	</div>
+
+	<!--手机应用图标-->
+	<div class="content-icon">
+		<div class="mobile-icon">
+			<div>
+				<div class="icon" @click="alert('去百度一下，看这个应用怎么用！这又不是手机，真幼稚！')">
+					<img src="images/baidu.svg" alt="" style="transform: scale(.8)">
+<!--					<i class="fa fa-camera"></i>-->
+				</div>
+				<div>手机百度</div>
+			</div>
+			<div>
+				<div class="icon" @click="alert('充会员了吗？还想看视频！')">
+					<img src="images/video.svg" alt="" style="transform: scale(.7)">
+<!--					<i class="fa fa-cloud"></i>-->
+				</div>
+				<div>腾讯视频</div>
+			</div>
+			<div>
+				<div class="icon" @click="alert('来自QQ的消息：来用QQ，功能多页面还炫酷！')">
+					<img src="images/wechat.svg" alt="" width="100%" height="100%">
+<!--					<i class="fa fa-weixin"></i>-->
+				</div>
+				<div>微信</div>
+			</div>
+			<div>
+				<div class="icon" @click="alert('来自微信的警告：卸载QQ，用我，页面简洁，功能也多，关键是你的朋友都在用！')">
+					<img src="images/qq.svg" alt="" style="transform: scale(.9)">
+				</div>
+				<div>QQ</div>
+			</div>
+			<div>
+				<div class="icon" @click="alert('想听免费歌，开玩笑！')">
+					<img src="images/music.svg" alt="" style="transform: scale(.85)">
+				</div>
+				<div>QQ音乐</div>
+			</div>
+			<div>
+				<div class="icon" @click="alert('该换手机了，还用三年前的手机安装应用，不怕爆炸~_~!')">
+					<img src="images/huawei.svg" alt="" width="100%" height="100%">
+<!--					<i class="fa fa-paw"></i>-->
+				</div>
+				<div>应用市场</div>
+			</div>
+			<div>
+				<div class="icon" @click="alert('别臭美了，你的图库有你素颜的照片吗？')">
+					<img src="images/photos.svg" alt="">
+<!--					<i class="fa fa-music"></i>-->
+				</div>
+				<div>图库</div>
+			</div>
+			<div>
+				<div class="icon" @click="alert('马爸爸警告：花呗还了没？就你那点零钱，坐公交都不够，还想干啥，赶紧卖血还钱！')">
+					<img src="images/支付宝.svg" alt="" width="100%" height="100%" style="transform: scale(1.02)">
+<!--					<i class="fa fa-camera"></i>-->
+				</div>
+				<div>支付宝</div>
+			</div>
+		</div>
+	</div>
+
+	<!--更多应用图标-->
+	<div class="content-more">
+		<div class="position">
+			<span style="background: #555555;"></span>
+			<span style="margin: 0 10px 0 10px;"></span>
+			<span></span>
+		</div>
+	</div>
+
+	<!--手机底部图标-->
+	<div class="content-footer">
+		<div>
+			<div class="footer-icon" @click="alert('中国移动和中国电信联名警告：您欠费10元已100天了，被我公司拉入黑名单，您将永久失去移动和电信的使用权！')">
+				<img src="images/phone2.svg" alt="" width="100%" height="100%" style="transform: scale(1.12)">
+			</div>
+			<div>电话</div>
+		</div>
+		<div>
+			<div class="footer-icon" style="background:#005bea;" @click="alert('你哪来的联系人，还想发短信，自娱自乐吗？')">
+				<img src="images/message.svg" alt="" style="transform: scale(.8)">
+			</div>
+			<div>信息</div>
+		</div>
+		<div style="margin-left: 2px;">
+			<div class="footer-icon" @click="alert('想看小电影莫入此门，想看帅哥美女请寻他路，想上网就是不行，有本事卸载我呀！')">
+				<img src="images/chrome.svg" alt="" style="transform: scale(.8)">
+			</div>
+			<div>浏览器</div>
+		</div>
+		<div style="margin-left: 1px;">
+			<div class="footer-icon" @click="alert('谁给你的自信打开相机，赶紧安装个美颜相机！')">
+				<img src="images/camera.svg" alt="">
+			</div>
+			<div>相机</div>
+		</div>
+	</div>
+</div>
+
+<!--手机设置菜单-->
+<div class="content content-menu" id="menu">
+
+	<!--设置菜单头部-->
+	<div class="header" style="color: white;font-weight: 100" id="header2">
+		<!--运营商名称-->
+		<div class="name">
+			<small class="name1 position">中国移动<span style="background:#ffffff;color:grey">HD</span></small>
+			<small class="name1 position">中国电信<span style="background:#ffffff;color:grey">HD</span></small>
+		</div>
+		<!--信号状态-->
+		<div class="signal">
+			<small class="signal1 position"><i class="fa fa-signal"></i></small>
+			<small class="signal1 position"><i class="fa fa-signal"></i></small>
+		</div>
+		<!--QQ状态图标-->
+		<div class="qq position">
+			<i class="fa fa-qq"></i>
+		</div>
+		<!--微信图标-->
+		<div class="weixin position">
+			<i class="fa fa-weixin"></i>
+		</div>
+		<!--手机状态栏时间-->
+<!--		<div id="time" class="position">-->
+
+<!--		</div>-->
+		<!--手机电池显示-->
+		<div class="battery position" style="margin-left: 285px;">
+			<i class="fa fa-battery-3"></i>
+		</div>
+		<!--手机剩余电量显示-->
+		<div class="dumpEnergy position" style="color: white;margin-left: 258px;">
+			85%
+		</div>
+		<!--蓝牙状态-->
+		<div class="blueTooth position" style="margin-left: 238px;">
+			<i class="fa fa-bluetooth-b"></i>
+		</div>
+		<!--wifi状态-->
+		<div class="wifi position" style="margin-left: 218px;">
+			<i class="fa fa-wifi"></i>
+		</div>
+		<!--定位信息状态-->
+		<div class="marker position" style="margin-left: 198px;">
+			<i class="fa fa-map-marker"></i>
+		</div>
+	</div>
+
+	<!--设置菜单主体-->
+	<div class="menu-body">
+		<!--菜单主体头部-->
+		<div class="menu-body-header">
+			<span>
+				<i class="fa fa-cog"></i>
+			</span>
+			<span>
+				<i class="fa fa-pencil"></i>
+			</span>
+		</div>
+		<!--菜单主体时间显示-->
+		<div class="menu-body-time">
+			<div class="menu-date">
+				<div id="menuTime" style="font-size: 35px;">
+
+				</div>
+				<div id="menuDate" style="font-size: 14px;margin-left: 3px;">
+
+				</div>
+			</div>
+		</div>
+
+		<!--菜单主体内容-->
+		<div class="menu-content-more">
+			<div>
+				<div class="menu-icon" style="background: #1296db;">
+					<i class="fa fa-wifi" style="color: #ffffff;"></i>
+				</div>
+				<p>WLAN</p>
+			</div>
+			<div>
+				<div class="menu-icon" style="background: #1296db;">
+					<i class="fa fa-bluetooth-b" style="margin-left: 20px;color: #ffffff;"></i>
+				</div>
+				<p>蓝牙</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-exchange" style="transform: rotate(90deg) scale(1.2);margin-left: 18px;"></i>
+				</div>
+				<p>移动数据</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-lightbulb-o" style="margin-left: 20px;"></i>
+				</div>
+				<p>手电筒</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-bell-o"></i>
+				</div>
+				<p>响铃</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-refresh" style="transform: rotate(90deg) scale(1.4);margin-left: 18px;"></i>
+				</div>
+				<p>自动旋转</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-share-alt" style="margin-left: 18px;"></i>
+				</div>
+				<p>分享</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-plane" style="margin-left: 18px;" onclick="change()"></i>
+				</div>
+				<p>飞行模式</p>
+			</div>
+			<div>
+				<div class="menu-icon" style="background: #1296db;">
+					<i class="fa fa-map-marker" style="margin-left: 20px;color: #ffffff;"></i>
+				</div>
+				<p>位置信息</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-crop" style="margin-left: 18px;"></i>
+				</div>
+				<p>截屏</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-eye" style="margin-left: 17px;margin-top: 17px;"></i>
+				</div>
+				<p>护眼模式</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-rss" style="margin-left: 20px;"></i>
+				</div>
+				<p>热点</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-video-camera"></i>
+				</div>
+				<p>屏幕录制</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-tv"></i>
+				</div>
+				<p>无线投屏</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-moon-o" style="margin-left: 20px;"></i>
+				</div>
+				<p>免打扰</p>
+			</div>
+			<div>
+				<div class="menu-icon">
+					<i class="fa fa-search" style="margin-left: 18px;"></i>
+				</div>
+				<p>搜索</p>
+			</div>
+		</div>
+	</div>
+
+	<!--设置消息通知-->
+	<div class="notice">
+		<div class="notice-header">
+			<img src="images/QQ-info.svg" alt="" width="13px" style="padding-right: 3px;">
+			<span style="font-size: 12px;padding-right: 3px;">QQ</span>
+			<span class="QQ-time" style="font-size: 12px;"></span>
+		</div>
+		<div class="notice-content">
+			<div class="notice-content-left">
+				<p style="font-size: 15px;font-family: '等线';font-weight: 600;padding-top: 3px;"><strong>麻花疼</strong></p>
+				<p style="font-size: 14px;font-family: '等线 Light';font-weight: 600;padding-top: 5px;">看什么看，赶紧充会员去！</p>
+			</div>
+			<div class="notice-content-right">
+				<img src="images/userPhoto.svg" alt="" width="40px" style="margin-left: 15px;">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="js/index.js"></script>
+<script src="js/background.js"></script>
+<script>
+	var content = new Vue({
+		el:".content",
+		data:{
+			msg:''
+		},
+		methods:{
+			alert(msg){
+			    alert(msg);
+			}
+		}
+	})
+</script>
+
+</body>
+</html>
